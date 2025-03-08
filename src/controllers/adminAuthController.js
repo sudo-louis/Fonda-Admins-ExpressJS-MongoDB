@@ -8,7 +8,7 @@ const loginAdmin = async (req, res) => {
 
         const admin = await Admin.findOne({ email });
         if (!admin) {
-        return res.status(401).json({ message: "Credenciales inválidas" });
+        return res.status(401).json({ message: "Credenciales inválidas correo" });
         }
 
         const isMatch = await bcrypt.compare(password, admin.password);
@@ -22,6 +22,7 @@ const loginAdmin = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: error.message });
+        console.log(error)
     }
 };
 

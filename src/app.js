@@ -15,6 +15,11 @@ const productRoutes = require("./routes/productRoutes");
 const providerRoutes = require("./routes/providerRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 
+ 
+
+app.get('/', (req,res)=>{
+    res.send('Hola mundo')
+})
 app.use("/api/admin/auth", adminAuthRoutes);
 app.use("/api/admin", adminProtectedRoutes);
 app.use("/api/products", productRoutes);
