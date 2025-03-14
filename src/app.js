@@ -26,4 +26,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/providers", providerRoutes);
 app.use("/api/categories", categoryRoutes);
 
+app.use("/uploads", express.static(path.join(__dirname, "src/uploads")));
+
+
 module.exports = app;
